@@ -22,19 +22,43 @@ public class Stats {
 	}
 
 	public int getMax() {
-		return 0;
+		int max = numbers[0];
+
+		for (int i = 1; i < count; i++) {
+			if (numbers[i] > max) {
+				max = numbers[i];
+			}
+		}
+
+		return max;
 	}
 
 	public int getMin() {
-		return 0;
+		int min = numbers[0];
+
+		for (int i = 1; i < count; i++) {
+			if (numbers[i] < min) {
+				min = numbers[i];
+			}
+		}
+
+		return min;
 	}
 
 	public int getTotal() {
-		return 0;
+		int total = 0;
+
+		for (int i = 0; i < count; i++) {
+			total += numbers[i];
+		}
+
+		return total;
 	}
 
 	public double getAverage() {
-		return 0.0;
+		int total = getTotal();
+
+		return total / (double) count;
 	}
 
 	@Override
